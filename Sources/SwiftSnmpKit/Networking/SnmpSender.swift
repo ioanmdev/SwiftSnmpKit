@@ -71,7 +71,7 @@ public class SnmpSender/*: ChannelInboundHandler*/ {
     /// Maps SNMP agent hostname to EngineId.  Gathered from SNMPv3 reports.
     internal var snmpHostToEngineId: [String:String] = [:]
     
-    private init() throws {
+    public init() throws {
         let group = MultiThreadedEventLoopGroup(numberOfThreads: 1)
         self.group = group
         let bootstrap = DatagramBootstrap(group: group).channelOption(ChannelOptions.socketOption(.so_reuseaddr), value: 1)
