@@ -18,7 +18,7 @@ public class SnmpSender/*: ChannelInboundHandler*/ {
     static let snmpPort = 161
     /// This is a singleton for sending and receiving Snmp traffic
     /// It is automatically started up by any application that incorporates SnmpKit
-    public static let shared: SnmpSender? = try? SnmpSender()
+    public static var shared: SnmpSender? = try? SnmpSender()
     private let group: MultiThreadedEventLoopGroup
     private let channel: Channel
     
